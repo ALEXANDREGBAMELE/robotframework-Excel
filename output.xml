@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20230520 20:00:08.177" rpa="false" schemaversion="3">
+<suite id="s1" name="Testrobot" source="C:\Users\HP 840 G3\Desktop\robot\testrobot.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
+<arg>psycopg2</arg>
+<arg>${dbname}</arg>
+<arg>${dbusername}</arg>
+<arg>${dbpassword}</arg>
+<arg>${dbhost}</arg>
+<arg>${dbport}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20230520 20:00:09.418" level="INFO">Connecting using : psycopg2.connect(database=dbtestrobot, user=postgres, password=root, host=localhost, port=5432) </msg>
+<status status="PASS" starttime="20230520 20:00:09.376" endtime="20230520 20:00:09.509"/>
+</kw>
+<test id="s1-t1" name="Lecture Fichier Excel" line="23">
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>2</arg>
+<arg>3</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.513" endtime="20230520 20:00:09.549"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.550"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.550" level="INFO">${result} = CAP NORD</msg>
+<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.550"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.551"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.511" endtime="20230520 20:00:09.551"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>3</arg>
+<arg>3</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.553" endtime="20230520 20:00:09.583"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.584"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.584" level="INFO">${result} = Roméo BEYARA</msg>
+<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.584"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.585"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.552" endtime="20230520 20:00:09.585"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>4</arg>
+<arg>3</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.586" endtime="20230520 20:00:09.615"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.615" endtime="20230520 20:00:09.615"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.616" level="INFO">${result} = romeo.beyara@eburtis.ci</msg>
+<status status="PASS" starttime="20230520 20:00:09.615" endtime="20230520 20:00:09.616"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.616" endtime="20230520 20:00:09.616"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.585" endtime="20230520 20:00:09.616"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>5</arg>
+<arg>5</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.618" endtime="20230520 20:00:09.648"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.649" endtime="20230520 20:00:09.649"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.649" level="INFO">${result} = None</msg>
+<status status="PASS" starttime="20230520 20:00:09.649" endtime="20230520 20:00:09.650"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.650" endtime="20230520 20:00:09.650"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.617" endtime="20230520 20:00:09.650"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>11</arg>
+<arg>4</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.652" endtime="20230520 20:00:09.683"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.683" endtime="20230520 20:00:09.684"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.684" level="INFO">${result} = 12000</msg>
+<status status="PASS" starttime="20230520 20:00:09.684" endtime="20230520 20:00:09.684"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.684" endtime="20230520 20:00:09.685"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.651" endtime="20230520 20:00:09.685"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>12</arg>
+<arg>4</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.687" endtime="20230520 20:00:09.717"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.717" endtime="20230520 20:00:09.717"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.718" level="INFO">${result} = 5000</msg>
+<status status="PASS" starttime="20230520 20:00:09.717" endtime="20230520 20:00:09.718"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.718" endtime="20230520 20:00:09.718"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.686" endtime="20230520 20:00:09.718"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>13</arg>
+<arg>4</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.720" endtime="20230520 20:00:09.752"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.752" endtime="20230520 20:00:09.752"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.753" level="INFO">${result} = 1000</msg>
+<status status="PASS" starttime="20230520 20:00:09.752" endtime="20230520 20:00:09.753"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.753" endtime="20230520 20:00:09.753"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.719" endtime="20230520 20:00:09.753"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>15</arg>
+<arg>4</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.755" endtime="20230520 20:00:09.787"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.787" endtime="20230520 20:00:09.787"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.788" level="INFO">${result} = 14000</msg>
+<status status="PASS" starttime="20230520 20:00:09.787" endtime="20230520 20:00:09.788"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.788" endtime="20230520 20:00:09.788"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.754" endtime="20230520 20:00:09.788"/>
+</kw>
+<kw name="Lire Excel">
+<arg>${chemin}</arg>
+<arg>${filename}</arg>
+<arg>16</arg>
+<arg>4</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${NomChemin}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230520 20:00:09.789" endtime="20230520 20:00:09.818"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${NomFichier}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.819" endtime="20230520 20:00:09.820"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${result}</var>
+<arg>${Ligne}</arg>
+<arg>${Colonne}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230520 20:00:09.821" level="INFO">${result} = 3000</msg>
+<status status="PASS" starttime="20230520 20:00:09.821" endtime="20230520 20:00:09.821"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230520 20:00:09.821" endtime="20230520 20:00:09.821"/>
+</kw>
+<status status="PASS" starttime="20230520 20:00:09.788" endtime="20230520 20:00:09.822"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>${Insertion}</var>
+<arg>insert into tbl_rapport_journalier(nom_magasin,nom_responsable,email_responsable,jounee,carte_bancaire,especes,ticket_restaurant,prelevement,apportmonnaie) values('SOCOSE','KONATE DISTRIBUTION','konatetekernel@gmail.com','2014/06/12',2300,4500,6500,76323,700);</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<msg timestamp="20230520 20:00:09.823" level="INFO">Executing : Query  |  insert into tbl_rapport_journalier(nom_magasin,nom_responsable,email_responsable,jounee,carte_bancaire,especes,ticket_restaurant,prelevement,apportmonnaie) values('SOCOSE','KONATE DISTRIBUTION','konatetekernel@gmail.com','2014/06/12',2300,4500,6500,76323,700); </msg>
+<msg timestamp="20230520 20:00:09.831" level="FAIL">ProgrammingError: no results to fetch</msg>
+<status status="FAIL" starttime="20230520 20:00:09.823" endtime="20230520 20:00:09.832"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>${select}</var>
+<arg>select ((carte_bancaire + especes + ticket_restaurant)-(prelevement + apportmonnaie)) as diference from tbl_rapport_journalier</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<status status="NOT RUN" starttime="20230520 20:00:09.833" endtime="20230520 20:00:09.833"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${select}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230520 20:00:09.834" endtime="20230520 20:00:09.834"/>
+</kw>
+<status status="FAIL" starttime="20230520 20:00:09.510" endtime="20230520 20:00:09.835">ProgrammingError: no results to fetch</status>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20230520 20:00:09.839" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20230520 20:00:09.839" endtime="20230520 20:00:09.839"/>
+</kw>
+<doc>Transferer les donnees dans une bd puis un fichier excel</doc>
+<status status="FAIL" starttime="20230520 20:00:08.180" endtime="20230520 20:00:09.840"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testrobot">Testrobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
