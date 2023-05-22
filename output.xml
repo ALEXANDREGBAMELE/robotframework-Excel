@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20230520 20:00:08.177" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20230522 02:34:28.414" rpa="false" schemaversion="3">
 <suite id="s1" name="Testrobot" source="C:\Users\HP 840 G3\Desktop\robot\testrobot.robot">
 <kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
 <arg>psycopg2</arg>
@@ -10,11 +10,12 @@
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
 connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20230520 20:00:09.418" level="INFO">Connecting using : psycopg2.connect(database=dbtestrobot, user=postgres, password=root, host=localhost, port=5432) </msg>
-<status status="PASS" starttime="20230520 20:00:09.376" endtime="20230520 20:00:09.509"/>
+<msg timestamp="20230522 02:34:30.886" level="INFO">Connecting using : psycopg2.connect(database=dbtestrobot, user=postgres, password=root, host=localhost, port=5432) </msg>
+<status status="PASS" starttime="20230522 02:34:30.848" endtime="20230522 02:34:30.994"/>
 </kw>
-<test id="s1-t1" name="Lecture Fichier Excel" line="23">
+<test id="s1-t1" name="Rapport jounalier caisse" line="24">
 <kw name="Lire Excel">
+<var>${nom_magasin}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>2</arg>
@@ -23,28 +24,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.513" endtime="20230520 20:00:09.549"/>
+<status status="PASS" starttime="20230522 02:34:31.000" endtime="20230522 02:34:31.059"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.550"/>
+<status status="PASS" starttime="20230522 02:34:31.059" endtime="20230522 02:34:31.060"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.550" level="INFO">${result} = CAP NORD</msg>
-<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.550"/>
+<msg timestamp="20230522 02:34:31.061" level="INFO">${result} = CAP NORD</msg>
+<status status="PASS" starttime="20230522 02:34:31.060" endtime="20230522 02:34:31.061"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.550" endtime="20230520 20:00:09.551"/>
+<status status="PASS" starttime="20230522 02:34:31.061" endtime="20230522 02:34:31.062"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.511" endtime="20230520 20:00:09.551"/>
+<msg timestamp="20230522 02:34:31.063" level="INFO">${nom_magasin} = CAP NORD</msg>
+<status status="PASS" starttime="20230522 02:34:30.998" endtime="20230522 02:34:31.063"/>
 </kw>
 <kw name="Lire Excel">
+<var>${nom_responsable}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>3</arg>
@@ -53,28 +56,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.553" endtime="20230520 20:00:09.583"/>
+<status status="PASS" starttime="20230522 02:34:31.066" endtime="20230522 02:34:31.124"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.584"/>
+<status status="PASS" starttime="20230522 02:34:31.124" endtime="20230522 02:34:31.125"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.584" level="INFO">${result} = Roméo BEYARA</msg>
-<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.584"/>
+<msg timestamp="20230522 02:34:31.126" level="INFO">${result} = Roméo BEYARA</msg>
+<status status="PASS" starttime="20230522 02:34:31.125" endtime="20230522 02:34:31.126"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.584" endtime="20230520 20:00:09.585"/>
+<status status="PASS" starttime="20230522 02:34:31.126" endtime="20230522 02:34:31.127"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.552" endtime="20230520 20:00:09.585"/>
+<msg timestamp="20230522 02:34:31.127" level="INFO">${nom_responsable} = Roméo BEYARA</msg>
+<status status="PASS" starttime="20230522 02:34:31.064" endtime="20230522 02:34:31.127"/>
 </kw>
 <kw name="Lire Excel">
+<var>${email_responsable}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>4</arg>
@@ -83,58 +88,68 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.586" endtime="20230520 20:00:09.615"/>
+<status status="PASS" starttime="20230522 02:34:31.130" endtime="20230522 02:34:31.192"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.615" endtime="20230520 20:00:09.615"/>
+<status status="PASS" starttime="20230522 02:34:31.192" endtime="20230522 02:34:31.193"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.616" level="INFO">${result} = romeo.beyara@eburtis.ci</msg>
-<status status="PASS" starttime="20230520 20:00:09.615" endtime="20230520 20:00:09.616"/>
+<msg timestamp="20230522 02:34:31.194" level="INFO">${result} = romeo.beyara@eburtis.ci</msg>
+<status status="PASS" starttime="20230522 02:34:31.193" endtime="20230522 02:34:31.194"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.616" endtime="20230520 20:00:09.616"/>
+<status status="PASS" starttime="20230522 02:34:31.195" endtime="20230522 02:34:31.195"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.585" endtime="20230520 20:00:09.616"/>
+<msg timestamp="20230522 02:34:31.197" level="INFO">${email_responsable} = romeo.beyara@eburtis.ci</msg>
+<status status="PASS" starttime="20230522 02:34:31.128" endtime="20230522 02:34:31.197"/>
 </kw>
 <kw name="Lire Excel">
+<var>${jounee}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>5</arg>
-<arg>5</arg>
+<arg>3</arg>
 <kw name="Open Excel Document" library="ExcelLibrary">
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.618" endtime="20230520 20:00:09.648"/>
+<status status="PASS" starttime="20230522 02:34:31.200" endtime="20230522 02:34:31.270"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.649" endtime="20230520 20:00:09.649"/>
+<status status="PASS" starttime="20230522 02:34:31.271" endtime="20230522 02:34:31.272"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.649" level="INFO">${result} = None</msg>
-<status status="PASS" starttime="20230520 20:00:09.649" endtime="20230520 20:00:09.650"/>
+<msg timestamp="20230522 02:34:31.273" level="INFO">${result} = 2023-05-19 00:00:00</msg>
+<status status="PASS" starttime="20230522 02:34:31.272" endtime="20230522 02:34:31.273"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.650" endtime="20230520 20:00:09.650"/>
+<status status="PASS" starttime="20230522 02:34:31.273" endtime="20230522 02:34:31.274"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.617" endtime="20230520 20:00:09.650"/>
+<msg timestamp="20230522 02:34:31.274" level="INFO">${jounee} = 2023-05-19 00:00:00</msg>
+<status status="PASS" starttime="20230522 02:34:31.198" endtime="20230522 02:34:31.274"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${jounee}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230522 02:34:31.276" level="INFO">2023-05-19 00:00:00</msg>
+<status status="PASS" starttime="20230522 02:34:31.275" endtime="20230522 02:34:31.276"/>
 </kw>
 <kw name="Lire Excel">
+<var>${carte_bancaire}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>11</arg>
@@ -143,28 +158,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.652" endtime="20230520 20:00:09.683"/>
+<status status="PASS" starttime="20230522 02:34:31.280" endtime="20230522 02:34:31.336"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.683" endtime="20230520 20:00:09.684"/>
+<status status="PASS" starttime="20230522 02:34:31.336" endtime="20230522 02:34:31.337"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.684" level="INFO">${result} = 12000</msg>
-<status status="PASS" starttime="20230520 20:00:09.684" endtime="20230520 20:00:09.684"/>
+<msg timestamp="20230522 02:34:31.337" level="INFO">${result} = 12000</msg>
+<status status="PASS" starttime="20230522 02:34:31.337" endtime="20230522 02:34:31.337"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.684" endtime="20230520 20:00:09.685"/>
+<status status="PASS" starttime="20230522 02:34:31.337" endtime="20230522 02:34:31.338"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.651" endtime="20230520 20:00:09.685"/>
+<msg timestamp="20230522 02:34:31.338" level="INFO">${carte_bancaire} = 12000</msg>
+<status status="PASS" starttime="20230522 02:34:31.277" endtime="20230522 02:34:31.338"/>
 </kw>
 <kw name="Lire Excel">
+<var>${especes}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>12</arg>
@@ -173,28 +190,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.687" endtime="20230520 20:00:09.717"/>
+<status status="PASS" starttime="20230522 02:34:31.340" endtime="20230522 02:34:31.383"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.717" endtime="20230520 20:00:09.717"/>
+<status status="PASS" starttime="20230522 02:34:31.384" endtime="20230522 02:34:31.385"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.718" level="INFO">${result} = 5000</msg>
-<status status="PASS" starttime="20230520 20:00:09.717" endtime="20230520 20:00:09.718"/>
+<msg timestamp="20230522 02:34:31.386" level="INFO">${result} = 5000</msg>
+<status status="PASS" starttime="20230522 02:34:31.386" endtime="20230522 02:34:31.386"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.718" endtime="20230520 20:00:09.718"/>
+<status status="PASS" starttime="20230522 02:34:31.386" endtime="20230522 02:34:31.386"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.686" endtime="20230520 20:00:09.718"/>
+<msg timestamp="20230522 02:34:31.386" level="INFO">${especes} = 5000</msg>
+<status status="PASS" starttime="20230522 02:34:31.339" endtime="20230522 02:34:31.386"/>
 </kw>
 <kw name="Lire Excel">
+<var>${ticket_restaurant}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>13</arg>
@@ -203,28 +222,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.720" endtime="20230520 20:00:09.752"/>
+<status status="PASS" starttime="20230522 02:34:31.388" endtime="20230522 02:34:31.427"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.752" endtime="20230520 20:00:09.752"/>
+<status status="PASS" starttime="20230522 02:34:31.427" endtime="20230522 02:34:31.427"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.753" level="INFO">${result} = 1000</msg>
-<status status="PASS" starttime="20230520 20:00:09.752" endtime="20230520 20:00:09.753"/>
+<msg timestamp="20230522 02:34:31.428" level="INFO">${result} = 1000</msg>
+<status status="PASS" starttime="20230522 02:34:31.427" endtime="20230522 02:34:31.428"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.753" endtime="20230520 20:00:09.753"/>
+<status status="PASS" starttime="20230522 02:34:31.428" endtime="20230522 02:34:31.428"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.719" endtime="20230520 20:00:09.753"/>
+<msg timestamp="20230522 02:34:31.428" level="INFO">${ticket_restaurant} = 1000</msg>
+<status status="PASS" starttime="20230522 02:34:31.387" endtime="20230522 02:34:31.429"/>
 </kw>
 <kw name="Lire Excel">
+<var>${prelevement}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>15</arg>
@@ -233,28 +254,30 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.755" endtime="20230520 20:00:09.787"/>
+<status status="PASS" starttime="20230522 02:34:31.436" endtime="20230522 02:34:31.474"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.787" endtime="20230520 20:00:09.787"/>
+<status status="PASS" starttime="20230522 02:34:31.475" endtime="20230522 02:34:31.475"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.788" level="INFO">${result} = 14000</msg>
-<status status="PASS" starttime="20230520 20:00:09.787" endtime="20230520 20:00:09.788"/>
+<msg timestamp="20230522 02:34:31.476" level="INFO">${result} = 14000</msg>
+<status status="PASS" starttime="20230522 02:34:31.475" endtime="20230522 02:34:31.476"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.788" endtime="20230520 20:00:09.788"/>
+<status status="PASS" starttime="20230522 02:34:31.476" endtime="20230522 02:34:31.476"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.754" endtime="20230520 20:00:09.788"/>
+<msg timestamp="20230522 02:34:31.476" level="INFO">${prelevement} = 14000</msg>
+<status status="PASS" starttime="20230522 02:34:31.435" endtime="20230522 02:34:31.476"/>
 </kw>
 <kw name="Lire Excel">
+<var>${apportmonnaie}</var>
 <arg>${chemin}</arg>
 <arg>${filename}</arg>
 <arg>16</arg>
@@ -263,68 +286,114 @@ connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
 <arg>${NomChemin}</arg>
 <arg>1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230520 20:00:09.789" endtime="20230520 20:00:09.818"/>
+<status status="PASS" starttime="20230522 02:34:31.480" endtime="20230522 02:34:31.526"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>${NomFichier}</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.819" endtime="20230520 20:00:09.820"/>
+<status status="PASS" starttime="20230522 02:34:31.527" endtime="20230522 02:34:31.527"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${result}</var>
 <arg>${Ligne}</arg>
 <arg>${Colonne}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20230520 20:00:09.821" level="INFO">${result} = 3000</msg>
-<status status="PASS" starttime="20230520 20:00:09.821" endtime="20230520 20:00:09.821"/>
+<msg timestamp="20230522 02:34:31.528" level="INFO">${result} = 3000</msg>
+<status status="PASS" starttime="20230522 02:34:31.527" endtime="20230522 02:34:31.528"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20230520 20:00:09.821" endtime="20230520 20:00:09.821"/>
+<status status="PASS" starttime="20230522 02:34:31.528" endtime="20230522 02:34:31.528"/>
 </kw>
-<status status="PASS" starttime="20230520 20:00:09.788" endtime="20230520 20:00:09.822"/>
+<msg timestamp="20230522 02:34:31.528" level="INFO">${apportmonnaie} = 3000</msg>
+<status status="PASS" starttime="20230522 02:34:31.478" endtime="20230522 02:34:31.528"/>
 </kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${Insertion}</var>
-<arg>insert into tbl_rapport_journalier(nom_magasin,nom_responsable,email_responsable,jounee,carte_bancaire,especes,ticket_restaurant,prelevement,apportmonnaie) values('SOCOSE','KONATE DISTRIBUTION','konatetekernel@gmail.com','2014/06/12',2300,4500,6500,76323,700);</arg>
-<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
-input `sansTran` to True to run command without an explicit transaction commit or rollback.
-Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
-<msg timestamp="20230520 20:00:09.823" level="INFO">Executing : Query  |  insert into tbl_rapport_journalier(nom_magasin,nom_responsable,email_responsable,jounee,carte_bancaire,especes,ticket_restaurant,prelevement,apportmonnaie) values('SOCOSE','KONATE DISTRIBUTION','konatetekernel@gmail.com','2014/06/12',2300,4500,6500,76323,700); </msg>
-<msg timestamp="20230520 20:00:09.831" level="FAIL">ProgrammingError: no results to fetch</msg>
-<status status="FAIL" starttime="20230520 20:00:09.823" endtime="20230520 20:00:09.832"/>
+<kw name="Insertion">
+<arg>${nom_magasin}</arg>
+<arg>${nom_responsable}</arg>
+<arg>${email_responsable}</arg>
+<arg>${jounee}</arg>
+<arg>${carte_bancaire}</arg>
+<arg>${especes}</arg>
+<arg>${ticket_restaurant}</arg>
+<arg>${prelevement}</arg>
+<arg>${apportmonnaie}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${query}</var>
+<arg>INSERT INTO</arg>
+<arg>tbl_rapport_journalier (nom_magasin,nom_responsable, email_responsable, jounee, carte_bancaire, especes, ticket_restaurant, prelevement, apportmonnaie ) VALUES ('${nom_magasin}','${nom_responsable}','${email_responsable}','${jounee}','${carte_bancaire}','${especes}','${ticket_restaurant}','${prelevement}','${apportmonnaie}')</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230522 02:34:31.537" level="INFO">${query} = INSERT INTO tbl_rapport_journalier (nom_magasin,nom_responsable, email_responsable, jounee, carte_bancaire, especes, ticket_restaurant, prelevement, apportmonnaie ) VALUES ('CAP NORD','Roméo BEYARA','...</msg>
+<status status="PASS" starttime="20230522 02:34:31.536" endtime="20230522 02:34:31.537"/>
 </kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${select}</var>
-<arg>select ((carte_bancaire + especes + ticket_restaurant)-(prelevement + apportmonnaie)) as diference from tbl_rapport_journalier</arg>
-<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
-input `sansTran` to True to run command without an explicit transaction commit or rollback.
-Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
-<status status="NOT RUN" starttime="20230520 20:00:09.833" endtime="20230520 20:00:09.833"/>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>${query}</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20230522 02:34:31.537" level="INFO">Executing : Execute SQL String  |  INSERT INTO tbl_rapport_journalier (nom_magasin,nom_responsable, email_responsable, jounee, carte_bancaire, especes, ticket_restaurant, prelevement, apportmonnaie ) VALUES ('CAP NORD','Roméo BEYARA','romeo.beyara@eburtis.ci','2023-05-19 00:00:00','12000','5000','1000','14000','3000') </msg>
+<status status="PASS" starttime="20230522 02:34:31.537" endtime="20230522 02:34:31.572"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${select}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230520 20:00:09.834" endtime="20230520 20:00:09.834"/>
+<status status="PASS" starttime="20230522 02:34:31.533" endtime="20230522 02:34:31.573"/>
 </kw>
-<status status="FAIL" starttime="20230520 20:00:09.510" endtime="20230520 20:00:09.835">ProgrammingError: no results to fetch</status>
+<kw name="Verification">
+<var>${solde}</var>
+<arg>${carte_bancaire}</arg>
+<arg>${especes}</arg>
+<arg>${ticket_restaurant}</arg>
+<arg>${prelevement}</arg>
+<arg>${apportmonnaie}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${montant_total}</var>
+<arg>${carte_bancaire}+${especes}+${ticket_restaurant}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230522 02:34:31.594" level="INFO">${montant_total} = 18000</msg>
+<status status="PASS" starttime="20230522 02:34:31.592" endtime="20230522 02:34:31.594"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${solde}</var>
+<arg>${prelevement} - ${apportmonnaie}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230522 02:34:31.601" level="INFO">${solde} = 11000</msg>
+<status status="PASS" starttime="20230522 02:34:31.596" endtime="20230522 02:34:31.601"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${solde_valid}</var>
+<arg>'${montant_total}'=='${solde}'</arg>
+<arg>Set Variable</arg>
+<arg>${True}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${False}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20230522 02:34:31.607" endtime="20230522 02:34:31.609"/>
+</kw>
+<msg timestamp="20230522 02:34:31.610" level="INFO">${solde_valid} = False</msg>
+<status status="PASS" starttime="20230522 02:34:31.603" endtime="20230522 02:34:31.610"/>
+</kw>
+<msg timestamp="20230522 02:34:31.612" level="INFO">${solde} = False</msg>
+<status status="PASS" starttime="20230522 02:34:31.586" endtime="20230522 02:34:31.612"/>
+</kw>
+<status status="PASS" starttime="20230522 02:34:30.994" endtime="20230522 02:34:31.616"/>
 </test>
 <kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
 <doc>Disconnects from the database.</doc>
-<msg timestamp="20230520 20:00:09.839" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20230520 20:00:09.839" endtime="20230520 20:00:09.839"/>
+<msg timestamp="20230522 02:34:31.623" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20230522 02:34:31.622" endtime="20230522 02:34:31.623"/>
 </kw>
 <doc>Transferer les donnees dans une bd puis un fichier excel</doc>
-<status status="FAIL" starttime="20230520 20:00:08.180" endtime="20230520 20:00:09.840"/>
+<status status="PASS" starttime="20230522 02:34:28.417" endtime="20230522 02:34:31.624"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Testrobot">Testrobot</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testrobot">Testrobot</stat>
 </suite>
 </statistics>
 <errors>
